@@ -61,8 +61,9 @@ public class Nunnigrafiikka extends Frame implements GLEventListener {
         GLCapabilities kyvyt = new GLCapabilities(glp);
         GLCanvas piirtopinta = new GLCanvas(kyvyt);
 
-        setSize(800, 600);
+        setSize(1920, 1080);
         add(piirtopinta);
+        setUndecorated(true);
         setVisible(true);
 
         // Tämä on tämmöistä "boilerplatea" että rastikin toimii
