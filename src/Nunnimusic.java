@@ -21,7 +21,7 @@ public class Nunnimusic {
             for( int i = 0; i < 5000; i++ ) {
                 Pallura p = new Pallura();
                 p.paikka = new Vektori(-1.0f + 2.0f * r.nextFloat(), -1.0f + 2.0f * r.nextFloat() * r.nextFloat() * r.nextFloat());
-                p.koko = 0.02f + r.nextFloat() * 0.03f;
+                p.koko = 0.012f + r.nextFloat() * 0.022f;
                 grafiikka.lisaaPallura(p);
             }
         }

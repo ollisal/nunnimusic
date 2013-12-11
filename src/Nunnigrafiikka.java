@@ -189,7 +189,7 @@ public class Nunnigrafiikka extends Frame implements GLEventListener {
         gl.glBufferData(GL2.GL_ARRAY_BUFFER, pallurat.size() * 8 * 4, kuvankulmaPuhveli, GL2.GL_STREAM_DRAW);
         gl.glTexCoordPointer(2, GL2.GL_FLOAT, 0, 0);
 
-        int kaari = 16;
+        int kaari = 8;
         gl.glLoadIdentity();
         for (int i = 0; i < kaari; i++) {
             gl.glColor3f(
@@ -198,8 +198,8 @@ public class Nunnigrafiikka extends Frame implements GLEventListener {
                     (float) Math.max(0, -1. + (i * 2) / (float) kaari));
                     
             gl.glDrawArrays(GL2.GL_QUADS, 0, pallurat.size() * 4);
-            gl.glTranslatef(0, 0.02f, 0);
-            gl.glScalef(0.98f, 1.0f, 1.0f);
+            gl.glTranslatef(0, 0.008f, 0);
+            gl.glScalef(0.99f, 1.03f, 1.0f);
         }
     }
 
