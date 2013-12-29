@@ -28,12 +28,16 @@ public class Pallura {
 
     void liikuta() {
         paikka.lisaa(nopeus);
-        nopeus.x += 0.00001 - Math.random() * 0.00002;
+        
+        paikka.x += .002 - .002 * Math.max(0, (paikka.x + 1) / 9);
+        paikka.x -= .002 - .002 * Math.max(0, (1 - paikka.x) / 9);
+        
+        nopeus.x += 0.00004 - Math.random() * 0.00008;
         nopeus.y -= 0.0002 + Math.random() * 0.0002;
         nopeus.x *= 0.999;
         nopeus.y *= 0.999;
         if (paikka.y < -1.0f) {
-            paikka.y = -1.0f + (float) Math.random() * 0.04f;
+            paikka.y = -1.0f;// + (float) Math.random() * 0.04f;
             nopeus.y *= -0.5;
         }
     }

@@ -61,7 +61,7 @@ public class Nunnigrafiikka extends Frame implements GLEventListener {
         GLCapabilities kyvyt = new GLCapabilities(glp);
         GLCanvas piirtopinta = new GLCanvas(kyvyt);
 
-        setSize(1920, 1080);
+        setSize(1440, 900);
         add(piirtopinta);
         setUndecorated(true);
         setVisible(true);
@@ -192,18 +192,20 @@ public class Nunnigrafiikka extends Frame implements GLEventListener {
         int kaari = 8;
         gl.glLoadIdentity();
         for (int i = 0; i < kaari; i++) {
+            float kirkkaus = .5f;
             gl.glColor3f(
-                    1f - (i * 2) / (float) kaari,
-                    i < kaari / 2 ? (i * 2) / (float) kaari : 1f - ((i - (kaari / 2)) * 2) / (float) kaari,
-                    (float) Math.max(0, -1. + (i * 2) / (float) kaari));
+                    kirkkaus * r,
+                    kirkkaus * g,
+                    kirkkaus * b
+            );
                     
             gl.glDrawArrays(GL2.GL_QUADS, 0, pallurat.size() * 4);
-            gl.glTranslatef(0, 0.008f, 0);
-            gl.glScalef(0.99f, 1.03f, 1.0f);
+            gl.glTranslatef(0, 0.004f, 0);
+            gl.glScalef(0.999f, 1.02f, 1.0f);
         }
     }
 
-    public final float r = 0.17f;
-    public final float g = 0.06f;
-    public final float b = 0.08f;
+    public final float r = .8f;
+    public final float g = .3f;
+    public final float b = .1f;
 }
